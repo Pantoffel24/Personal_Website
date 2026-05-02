@@ -136,10 +136,10 @@
         .code-viewer {
             background-color: #282c34;
             border-radius: 4px;
-            overflow: hidden;
+            overflow: auto;
             margin: 1rem 0;
             max-height: 600px;
-            overflow-y: auto;
+            width: 100%;
         }
 
         .code-viewer pre {
@@ -147,6 +147,9 @@
             padding: 1.5rem;
             font-size: 0.9rem;
             line-height: 1.6;
+            white-space: pre-wrap;
+            word-break: break-word;
+            overflow-wrap: anywhere;
         }
 
         .code-viewer code {
