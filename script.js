@@ -144,11 +144,16 @@ function displayProjects(category, sectionId) {
     }
 
     grid.innerHTML = projectList.map((project, index) => `
-        <div class="project-card" onclick="navigateToProject('${category}', ${index})">
-            <h3>${project.title}</h3>
-            <p>${project.description}</p>
-            <div class="project-tags">
-                ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+        <div class="project-card">
+            <div class="project-card-content" onclick="navigateToProject('${category}', ${index})" role="button" tabindex="0">
+                <h3>${project.title}</h3>
+                <p>${project.description}</p>
+                <div class="project-tags">
+                    ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                </div>
+            </div>
+            <div class="project-card-footer">
+                <button type="button" class="project-card-button" onclick="event.stopPropagation(); navigateToProject('${category}', ${index})">View Details</button>
             </div>
         </div>
     `).join('');
